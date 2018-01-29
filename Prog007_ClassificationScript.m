@@ -4,17 +4,28 @@ format short
 
 Subject = 1; % (1,2,3,...12)
 
+
 %% LOAD DATA
 
 ClassMethod = 'SVM'; % 'SVM', 'LDA'
 ResultType = 'RAW'; % 'RAW', 'CAR', 'ICA'
 
 % _LINUX_ PATH
-path = [pwd, '/Results/offline/', ClassMethod, '/', ResultType];
+if(exist([pwd, '/Results/offline/', ClassMethod, '/', ResultType], 'dir')==7)
+    path = [pwd, '/Results/offline/', ClassMethod, '/', ResultType];
+else
+    mkdir([pwd, '/Results/offline/', ClassMethod, '/', ResultType]);
+    path = [pwd, '/Results/offline/', ClassMethod, '/', ResultType];
+end
 load([pwd '/experiment_rawdata/XY_S' sprintf('%0.3u',Subject)])
 
 % _WINDOWS_ PATH
-%path = [pwd, '\Results\offline\', ClassMethod, '\', ResultType];
+%if(exist([pwd, '\Results\offline\', ClassMethod, '\', ResultType], 'dir')==7)
+%    path = [pwd, '\Results\offline\', ClassMethod, '\', ResultType];
+%else
+%    mkdir([pwd, '\Results\offline\', ClassMethod, '\', ResultType]);
+%    path = [pwd, '\Results\offline\', ClassMethod, '\', ResultType];
+%end
 %load([pwd '\experiment_rawdata\XY_S' sprintf('%0.3u',Subject)])
 
 

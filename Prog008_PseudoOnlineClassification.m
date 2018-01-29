@@ -4,10 +4,22 @@ ClassMethod = 'SVM'; % 'SVM', 'LDA'
 ResultType = 'RAW'; % 'RAW', 'CAR', 'ICA'
 
 % _LINUX_ PATH
-path = [pwd, '/Results/online/', ClassMethod, '/', ResultType];
+if(exist([pwd, '/Results/offline/', ClassMethod, '/', ResultType], 'dir')==7)
+    path = [pwd, '/Results/offline/', ClassMethod, '/', ResultType];
+else
+    mkdir([pwd, '/Results/offline/', ClassMethod, '/', ResultType]);
+    path = [pwd, '/Results/offline/', ClassMethod, '/', ResultType];
+end
+load([pwd '/experiment_rawdata/XY_S' sprintf('%0.3u',Subject)])
 
 % _WINDOWS_ PATH
-%path = [pwd, '\Results\online\', ClassMethod, '\', ResultType];
+%if(exist([pwd, '\Results\offline\', ClassMethod, '\', ResultType], 'dir')==7)
+%    path = [pwd, '\Results\offline\', ClassMethod, '\', ResultType];
+%else
+%    mkdir([pwd, '\Results\offline\', ClassMethod, '\', ResultType]);
+%    path = [pwd, '\Results\offline\', ClassMethod, '\', ResultType];
+%end
+%load([pwd '\experiment_rawdata\XY_S' sprintf('%0.3u',Subject)])
 
 
 %% FEATURE EXTRACTION FOR TRAINING DATA
@@ -118,7 +130,7 @@ stem((mean(BrakeIntentIntervalVect) - std(BrakeIntentIntervalVect))/250, 1, '--r
 stem((mean(BrakeIntentIntervalVect) + std(BrakeIntentIntervalVect))/250, 1, '--r')
 xlabel('Time in seconds');
 ylabel('Accuracy of the prediction model');
-title(['Results for pseudo-online classification for Subject ' num2str(Subject)]); % titulo manual
+title(['Results for pseudo-online classification for Subject ' num2str(Subject)]); 
 legend('Accuracy estimation', 'Avg. braking response +/- std', 'Visual stimulus activation')
 
 
