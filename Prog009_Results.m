@@ -1,3 +1,11 @@
+% =========================================================================
+%
+%  Script to generate results table for all participants & boxplot of
+%  average accuracy for every classification scenario.
+%  
+%
+% =========================================================================
+
 %% JOINS OFFLINE RESULTS FOR ALL PARTICIPANTS IN ONE TABLE
 % INITIALIZE
 clear all; close all; clc

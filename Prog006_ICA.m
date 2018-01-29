@@ -1,8 +1,16 @@
+% =========================================================================
+%
+%  Script to apply ICA decomposition on EEG data
+%  Use it with EEG dataset before or after segmentation
+%  
+%
+% =========================================================================
+
 %% COMPUTE ICA
 
 cfg                 = [];
 cfg.method          = 'runica';
-comp                = ft_componentanalysis(cfg,EEG_TOT);
+comp                = ft_componentanalysis(cfg,EEG_TOT); % Modify EEG var accordingly
 
 
 %% Plot time course

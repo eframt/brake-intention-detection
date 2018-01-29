@@ -2,3 +2,4 @@
 lib/
 experiment_rawdata/
 *.m~
+Prog000_EEGanalysis.m

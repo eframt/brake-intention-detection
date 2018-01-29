@@ -1,3 +1,11 @@
+% =========================================================================
+%
+%  Script to apply pseudo-online classification using SVM or LDA
+%  classification.
+%
+% 
+% =========================================================================
+
 %% LOAD DATA (YOU HAVE TO RUN Prog003_ChannelsScript FIRST)
 
 ClassMethod = 'SVM'; % 'SVM', 'LDA'

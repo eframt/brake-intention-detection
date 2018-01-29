@@ -1,3 +1,11 @@
+% =========================================================================
+%
+%  Script to generate layout file required for ICA decomposition.
+%  Modify according layout configuration used (i.e. 10-20, 10-10, etc)
+%  
+%
+% =========================================================================
+
 %% 1) CONSTRUCT LAYOUT FILED
 
 % Go to fieldtrip, select a template *.lay file and keep only the

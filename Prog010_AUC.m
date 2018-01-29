@@ -1,3 +1,11 @@
+% =========================================================================
+%
+%  Script to generate AUC charts & confusion matrix for all participants
+%  
+%  
+%
+% =========================================================================
+
 %% COMPUTES AUC
 % INITIALIZE
 clear all; close all; clc

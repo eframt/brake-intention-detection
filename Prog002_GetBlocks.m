@@ -1,10 +1,19 @@
+% =========================================================================
+%
+%  Script to generate individual trials in Field Trip format taking time
+%  instant where red light was activated as reference (t0).
+%  NOTE: If an experiment is divided in 2 runs, this script must be
+%  executed for both of them.
+%
+% =========================================================================
+
 %% GET BLOCKS - EFRAIN DATA
 % INITIALIZE
 clear all; close all; clc
 format short
 
 Subject         = 1; %(1,2,3,...12) 12 participants total
-run             = 2; %(1,2) 2 runs for some participants
+run             = 1; %(1,2) 2 runs for some participants
 endTrialThres   = 1.5; %Invertal for first trial segmentation in seconds 
 trialMinLen     = endTrialThres * 2;
 initDelay       = 5; %Remove first initDelay seconds for signal stabilization
@@ -77,7 +86,7 @@ stem(Data.time(IndFin),VectorLight(IndFin),'db','MarkerFaceColor','b')
 legend('LIGHT SIGNAL','Start','Brake','End')
 
 
-%% TRIAL GENARATION IN FIELDTRIP FORMAT
+%% TRIAL GENERATION IN FIELDTRIP FORMAT
 
 DATA.time       = cell(1,length(IndIni));  % Nchannels x Nsamples
 DATA.trial      = cell(1,length(IndIni)); 

@@ -1,16 +1,18 @@
-% INITIALIZE
+% =========================================================================
+% Script 
+% 
+% 
+% =========================================================================
+
+%% INITIALIZE
 clear all; close all; clc
 format short
 
-Fs = 250;
+Fs = 250; % Sampling rate
 
 %% LOAD DATA
 
-% _LINUX_ PATH
-%ruta = '/media/efrain/OS/Documents and Settings/efrainpc/Mis documentos/MATLAB/ITESM/Tesis/';
-
-% _WINDOWS_ PATH
-ruta = 'C:\Users\efrainpc\Documents\MATLAB\ITESM\Tesis\';
+path = pwd;
 
 
 %% Construct Table of mean values from each EEG channel
@@ -18,7 +20,7 @@ means = zeros(1,32);
 meanTable = [];
 
 for i=1:10
-    load([ruta 'S' sprintf('%0.3u', i) '_R001']);
+    load([path '/experiment_rawdata/S' sprintf('%0.3u', i) '_R001']);
     
     for j=1:32
         t = y(1,5/Fs:length(y));
@@ -49,9 +51,9 @@ p(9).Marker = '^';
 p(10).Marker = '<';
 
 %% FFT
-Fs = 250;                    % Sampling frequency
-T = 1/Fs;                     % Sample time
-%NFFT = [];                     % Length of signal
+Fs = 250;          % Sampling frequency
+T = 1/Fs;          % Sample time
+%NFFT = [];        % Length of signal
 Yeeg = [];
 f = [];
 

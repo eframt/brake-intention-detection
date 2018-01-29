@@ -1,3 +1,11 @@
+% =========================================================================
+%
+%  Script to apply preprocesing filters like CAR, Laplacian, Band pass
+%  filtering, etc.
+%  
+%
+% =========================================================================
+
 %% PREPROCESSING: CAR|LAPLACIAN FILTERING
 
 %Commom average reference filtering

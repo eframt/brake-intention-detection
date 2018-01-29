@@ -1,3 +1,11 @@
+% =========================================================================
+%
+%  Script to generate final trial segmentation and channel generation.
+%  It also generates X and Y matrices for classification algorithms
+%  
+%
+% =========================================================================
+
 %% INITIALIZE
 clear all; close all; clc
 format short

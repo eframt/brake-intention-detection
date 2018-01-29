@@ -1,3 +1,11 @@
+% =========================================================================
+%
+%  Script to generate boxplots of brake reaction times for all
+%  participants  
+%  
+%
+% =========================================================================
+
 %% COMPUTES BOX PLOTS FOR BRAKE REACTION TIMES
 % INITIALIZE
 clear all; close all; clc

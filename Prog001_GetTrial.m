@@ -1,16 +1,25 @@
+% =========================================================================
+%
+%  Script to convert acquired data to Fieldtrip format for every subject
+%  NOTE: If an experiment is divided in 2 runs, this script must be
+%  executed for both of them.
+%
+% =========================================================================
+
 %% GET TRIAL - DATA EFRAIN 
 % INITIALIZE
 clear all; close all; clc
 format short
 
 Subject  = 1; % (1,2,3,...12) 12 participants total
-run      = 2; % (1,2) 2 runs for some participants
+run      = 1; % (1,2) 2 runs for some participants
 
 % _LINUX_ PATH
 path = 'experiment_rawdata/';
 
 % _WINDOWS_ PATH
 %ruta = 'experiment_rawdata\';
+
 
 %% LOAD DATA
 
@@ -19,6 +28,7 @@ if(exist ([path 'S' sprintf('%0.3u',Subject) '_R' sprintf('%0.3u',run) '.mat'], 
 else
     disp('Warning: No experiment file found! Please download at http://efra-mt.com/files/experiment_rawdata.zip');
 end
+
 
 %% CONVERT TO FIELDTRIP FORMAT
 % DATA COMPLETE, AF3 y AF4 EOC

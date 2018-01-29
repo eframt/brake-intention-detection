@@ -1,4 +1,12 @@
-% INITIALIZE
+% =========================================================================
+%
+%  Script to apply offline classification using SVM or LDA classification
+%  methods with 10-fold cross validation and generates table of results.
+%  
+%
+% =========================================================================
+
+%% INITIALIZE
 clear all; close all; clc
 format short
 
