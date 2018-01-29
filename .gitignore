@@ -1,0 +1,4 @@
+# Git ignore file for BrakeIntentionDetection
+lib/
+experiment_rawdata/
+*.m~
